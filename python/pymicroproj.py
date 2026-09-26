@@ -1,29 +1,65 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import os
 
 
 def get_valid_date(prompt: str) -> str:
-    """Prompts until a valid, present/future date in DD/MM/YYYY format is entered."""
     while True:
         date_str = input(prompt).strip()
         try:
-            # Requires strict DD/MM/YYYY format with a 4-digit year (e.g., 25/12/2026)
             parsed_date = datetime.strptime(date_str, "%d/%m/%Y").date()
-
-            # Prevent bookings in the past
             if parsed_date < datetime.today().date():
                 print(
                     "Bot: You cannot book an appointment in the past. Try again."
                 )
                 continue
-
             return date_str
-
         except ValueError:
             print(
                 "Bot: Invalid date format! Please use DD/MM/YYYY with a 4-digit year (e.g., 25/12/2026)."
             )
+
+
+def generate_ics_file(
+    booking_id: int,
+    clinic: str,
+    fname: str,
+    lname: str,
+    service: str,
+    date_str: str,
+    time_str: str,
+) -> str:
+    start_dt = datetime.strptime(
+        f"{date_str} {time_str}", "%d/%m/%Y %I:%M %p"
+    )
+    end_dt = start_dt + timedelta(minutes=30)
+
+    dt_format = "%Y%m%dT%H%M%S"
+    start_iso = start_dt.strftime(dt_format)
+    end_iso = end_dt.strftime(dt_format)
+    now_iso = datetime.now().strftime(dt_format)
+
+    ics_content = f"""BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Appointment Bot//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:appointment-{booking_id}@{clinic.lower().replace(' ', '')}.com
+DTSTAMP:{now_iso}
+DTSTART:{start_iso}
+DTEND:{end_iso}
+SUMMARY:{service} - {clinic}
+DESCRIPTION:Appointment for {fname} {lname} for {service} at {clinic}.
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR"""
+
+    filename = f"appointment_{booking_id}.ics"
+    with open(filename, "w") as file:
+        file.write(ics_content.strip())
+
+    return filename
 
 
 class AppointmentBot:
@@ -74,7 +110,6 @@ class AppointmentBot:
             print("Bot: Service field cannot be blank.")
             service = input("Bot: Enter your service: ").strip()
 
-        # Actively calls get_valid_date to validate DD/MM/YYYY format
         date = get_valid_date("Bot: Enter your preferred date (DD/MM/YYYY): ")
 
         while True:
@@ -82,7 +117,6 @@ class AppointmentBot:
                 f"Bot: Enter your preferred time {self.timeslots}: "
             ).strip()
 
-            # Restricts input to available timeslots only
             valid_slot = next(
                 (
                     slot
@@ -97,7 +131,6 @@ class AppointmentBot:
                 )
                 continue
 
-            # Check for double-booking on the exact date and time
             conflict = any(
                 app["date"] == date and app["time"].lower() == valid_slot.lower()
                 for app in self.appointments
@@ -142,11 +175,20 @@ class AppointmentBot:
             "time": time,
         }
         self.appointments.append(booking)
-        self.nxtid += 1
 
         self.save_appointments()
+
+        ics_filename = generate_ics_file(
+            self.nxtid, self.clinic, fname, lname, service, date, time
+        )
+
+        self.nxtid += 1
+
         print(
-            f"\nBot: Confirmed! Appointment #{booking['id']} booked for {fname} {lname} on {date} at {time}.\n"
+            f"\nBot: Confirmed! Appointment #{booking['id']} booked for {fname} {lname} on {date} at {time}."
+        )
+        print(
+            f"Bot: Calendar invite generated -> Saved as '{ics_filename}' in your folder!\n"
         )
 
     def view_appointments(self):
