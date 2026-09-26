@@ -1,0 +1,21 @@
+ul {background-color: burlywood;
+color:rgb(54, 35, 11);}
+table{background-color: aquamarine;
+color:rgb(23, 61, 61);
+font-size:50px;}
+div{font-size:large;}
+.highlight{background-color: aquamarine;
+color:deeppink;}
+#cta{background-color:deeppink;
+color:aquamarine;}
+.font-family{font-family: 'Courier New', Courier, monospace;}
+.font-size {font-size:40px;}
+.font-size1 {font-size:90px;}
+.font-size2 {font-size:200px;}
+.font-size3 {font-size:small;}
+.font-size4 {font-size:xx-small;}
+p {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.line-height {line-height:2.5em;}
+.letter-spacing {letter-spacing: 1.5em;}
+.text-decor{text-decoration:underline ;}
+.text-align {text-align: right;}

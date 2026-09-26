@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Course part</title>
+    <link rel="stylesheet" href="CSS Style.css"/>
+</head>
+<body>
+    
+    <!--Heading-->
+    <h>This is the Heading</h>
+    <!--Pragraph-->
+    <p>this is a paragraph</p>
+    <style>
+        p{color:darkgreen;
+        font-size:30px; }
+    </style>
+    <p> Lorem ipsum dolor sit amet,<b>consectetur adipisicing elit.</b> <br /> 
+        Ipsa mollitia dolor, <strong>distinctio soluta nisi obcaecati earum vel labore,</strong>
+         voluptates illum, <hr><i>voluptas animi!</i>  Quos, ipsum assumenda<em>est fugit unde</em>  possimus in.</p>
+         <!--Example of headings-->
+         <h1 style="color: rgb(244, 0, 0);">This is h1</h1>
+         <h2 style="color:coral">This is h2</h2>
+         <h3 style="color:burlywood">This is h3</h3>
+         <h4 style="color:aquamarine">This is h4</h4>
+         <h5 style="color:aqua">This is h5</h5>
+         <h6 style="color:darkorchid">This is h6</h6>
+<!--Example of bold-->
+<p>Here the text is in <b>bold</b>
+and here the text is in <strong>strong</strong>
+the key difference is that both are visually bold in text style but the feature 'strong' indicates to the browser that the selected text is important</p>
+<!--Example of italic-->
+<p> Here the text is in <i>italic</i>
+and here the text is in <em> em</em>
+the difference between the two is one is indicates to the browser that selected text is italicized</p>
+<!--Example of breaks-->
+<p> Using breaks helps to, as the name suggests <br />break down a sentence <br /> into multiple parts <br /> as you can see </p>
+<!--Example of hr-->
+<p> Using horizontal rule has the same<hr> effect as using<hr> breaks but along<hr>with adding lines of seperation </p>
+<!--This shows divisions-->
+<div> Division can be used to group the text<br /> for Example<br /> John Doe<br /> 123 Main street<br /> Lahore,Pakistan</div>
+<!--using a link-->
+<a href="https://www.google.com">This is a link </a> <br />
+<a href="https://www.google.com" Target="_blank"> This also a link but it opens a second tab</a> <br />
+<a href="https://www.google.com" Target="_blank" rel="norefer"> This is also a link but it hides the web address from hackers</a> <br />
+<a href="https://www.google.com" Target="_blank" rel="norefer" title="this opens to google"> This ia also a link but it gives you a title when you hover over it</a>
+<!--Using an Image-->
+<h3> This is an image</h3>
+<br /><p><img src="https://thumbs.dreamstime.com/b/sample-jpeg-heartwarming-close-up-endearing-small-mouse-happily-munching-piece-cheese-357411130.jpg" alt="mouse eating cheeeese"/>
+<h3>This is the image but with size formatting</h3>
+<img src="https://thumbs.dreamstime.com/b/sample-jpeg-heartwarming-close-up-endearing-small-mouse-happily-munching-piece-cheese-357411130.jpg" alt="mouse eating cheeese" width=200px height=200px />
+<h3>This the image but it also acts as a link</h3>
+<a href="https://www.google.com"><img src="https://thumbs.dreamstime.com/b/sample-jpeg-heartwarming-close-up-endearing-small-mouse-happily-munching-piece-cheese-357411130.jpg" alt="mouse eating cheeeese" width=200px height=200px /> </a>
+<h3>This is also an image with a link but it opens in the second tab</h3>
+<a href="https://www.google.com" target="_blank" rel="norefer"><img src="https://thumbs.dreamstime.com/b/sample-jpeg-heartwarming-close-up-endearing-small-mouse-happily-munching-piece-cheese-357411130.jpg" alt="mouse eating cheeese" /> </a></a></p>
+<h3>This is the same image agin but text appears when you hover over it, oh and its a link</h3>
+<a href="https://www.google.com" target="_blank" title="ahahah its a mouse eating cheeeese"> <img src="mouse eating cheeeese.jpeg" alt="mouse eating cheeese" width=200px height=200px /> </a>
+<!--Unordered lists-->
+<h3>This is an unordered list</h3>
+<ul>
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Cheese</li>
+    <li>Butter</li>
+</ul>
+<!--Ordered Lists-->
+<h3>This is an ordered list</h3>
+<ol>
+    <li>Wake up</li>
+    <li>Brush Teeth</li>
+    <li>Have Breakfast</li>
+</ol>
+<!--Definition Lists-->
+<h3>This is a definition list</h3>
+<dl>
+    <dd>HTML</dd>
+    <dt>Hyper text Markup link</dt>
+    <dd>WWW</dd>
+    <dt>World Wide Web</dt>
+</dl>
+<!--Using both ordered and unordered lists-->
+<h3>Using both ordered and unordered lists</h3>
+<ol>
+<li>Ingrediants</li>
+<ul><li>Bread</li>
+<li>Cheese</li>
+<li>Butter</li>
+<li>Egg</li></ul>
+<li>To do:</li>
+<ul>
+    <li>Wake up</li>
+    <li>Brush Teeth</li>
+    <li>Have Breakfast</li>
+</ul>
+</ol>
+<!--Forms-->
+<h3>This is an interactive form</h3>
+<form>
+    <label for="username">User Name:</label>
+    <input type="text" id="username" placeholder="Enter your Name"/>
+    <br />
+    <label for="email">Email ID</label>
+    <input type="email" id="email" placeholder="Enter your Email ID"/>
+    <br />
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password"/>
+    <br />
+    <label for="number">Number</label>
+    <input type="number" id="number" placeholder="Enter your Number"/>
+    <br />
+    <label for="dob">Date</label>
+    <input type="date" id="dob" />
+    <br />
+    <label for="file">Put File here</label>
+    <input type="file" id="file" placeholder="Enter File here"/>
+    <br />
+    <label for="gender">Male</label>
+    <input type="radio" id="male" name="gender" value="male"/>
+    <label for="gender">Female</label>
+    <input type="radio" id="female" name="gender" value="female"/>
+    <br />
+    <label for="Skills">Skills</label>
+    <input type="checkbox" id="HTML" name="Skills" value="HTML"/>
+    <label for="Skills">HTML</label>
+    <input type="checkbox" id="CSS" name="Skills" value="CSS"/>
+    <label for="Skills">CSS</label>
+    <input type="checkbox" id="C++" name="Skills" value="C++"/>
+    <label for="Skills">C++</label>
+    <br />
+    <label for="color">Pick a colour</label>
+    <input type="color" id="color"/>
+</form>
+<!--Another form-->
+<h3>This is another form </h3>
+<form action="#" method="post" autocomplete="on">
+    <label for="username">User Name</label>
+    <input type="text" id="username" placeholder="Enter your name" required/>
+    <br />
+    <label for="email">Email ID</label>
+    <input type="email" id="email" placeholder="Enter your Email ID" required/>
+    <br />
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password"required/>
+    <br />
+    <label for="number">Number</label>
+    <input type="number" id="number" placeholder="Enter your Number"/>
+    <br />
+    <label for="dob">Date</label>
+    <input type="date" id="dob" />
+    <br />
+    <label for="file">Put File here</label>
+    <input type="file" id="file" placeholder="Enter File here" required/>
+    <br />
+    <label for="gender">Male</label>
+    <input type="radio" id="male" name="gender" value="male" required/>
+    <label for="gender">Female</label>
+    <input type="radio" id="female" name="gender" value="female" required/>
+    <br />
+    <label for="Skills">Skills</label>
+    <input type="checkbox" id="HTML" name="Skills" value="HTML"/>
+    <label for="Skills">HTML</label>
+    <input type="checkbox" id="CSS" name="Skills" value="CSS"/>
+    <label for="Skills">CSS</label>
+    <input type="checkbox" id="C++" name="Skills" value="C++"/>
+    <label for="Skills">C++</label>
+    <br />
+    <label for="color">Pick a colour</label>
+    <input type="color" id="color"/>
+    <br />
+    <input type="submit" value="submit"/>
+</form>
+    <!--Table-->
+    <h3>Using a Table</h3>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>$1</td>
+        </tr>
+        <tr>
+            <td>Orange</td>
+            <td>$2</td>
+        </tr>
+        <tr>
+            <td>Mango</td>
+            <td>$3</td>
+        </tr>
+    </table>
+    <!--Semantic Table-->
+    <h3>This is a semantic table</h3>
+    <table>
+        <thead>
+            <td>Product</td>
+            <td>Price</td>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Apple</td>
+            <td>$1</td>
+        </tr>
+        <tr>
+            <td>Orange</td>
+            <td>$2</td>
+        </tr>
+        <tr>
+            <td>Mango</td>
+            <td>$3</td>
+        </tr>
+</tbody>
+    </table>
+    <!--Merging table cells-->
+    <h3>This is merging table cells</h3>
+    <table border="1">
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Location</th>
+</tr>
+<tr>
+    <td>John</td>
+    <td>22</td>
+    <td>Lahore</td>
+</tr>
+ </table>
+ <!--Colspan to horizontally merge cells-->
+ <h3>Another table but this one uses colspan merge horizontally across table cells</h3> 
+ <table border="1">
+    <tr>
+    <th colspan="3">User Info</th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Location</th>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>22</td>
+        <td>Lahore</td>
+    </tr>
+ </table>
+ <!--Rowspan to vertically merge cells-->
+ <h3>Another table but this one uses rowspan merge vertically across table cells</h3>
+ <table border="1">
+    <tr>
+        <th rowspan="3">User Info</th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Location</th>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>22</td>
+        <td>Lahore</td>
+    </tr>
+ </table>
+ <h3 id="cta">Same thing but in a different style</h3>
+ <table border="1">
+    <tr>
+        <th rowspan="1">Name</th>
+        <td>John Doe</td>
+    </tr>
+    <tr>
+    <th rowspan="1">Age</th>
+    <td>22</td>
+    </tr>
+    <tr>
+        <th rowspan="1">Location</th>
+        <td>Lahore</td>
+    </tr>
+ </table>
+ <form><div">
+    <h3 class="highlight" >bro what are you?</h3>
+    <label for="what are you?">non chalant</label>
+    <input type="radio" id="non chalant" name="what are you?" value="non chalant"/>
+    <label for="what are you?">chalant</label>
+    <input type="radio" id="chalant" name="what are you?" value="chalant"/>
+    <br />
+    <label for="what are you">baddie</label>
+    <input type="radio" id="baddie" name="what are you" value="baddie"/>
+    <label for="what are you">non baddie</label>
+    <input type="radio" id="non baddie" name="what are you" value="non baddie"/>
+    <br />
+    <label for="what are you lol">tall shi</label>
+    <input type="radio" id="tall shi" name="what are you lol" value="tall shi"/>
+    <label for="what are you lol">shawty</label>
+    <input type="radio" id="shawty" name="what are you lol" value="shawty"/>
+    </div>
+    <!--font styling-->
+    <p class="font-family">
+    We're trying out different font style techniques. We're using fonts, font families(this one) then font sizes and other stuff</p>
+    <br />
+    <p class="font-size1">This</p>
+    <p class="font-size2">shows</p>
+    <p class="font-size3">font</p>
+    <p class="font-size4">sizes</p>
+    <!--things getting messy so im cleaning up-->
+    <p class="line-height">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Placeat, aperiam. Officiis cumque doloremque delectus sunt nostrum 
+         iure deleniti repellendus ipsam autem. Accusamus omnis, officiis veniam provident
+          expedita praesentium delectus totam!
+        </p>
+        <p class="letter-spacing">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+             Earum, magnam! Unde minus inventore quasi magni? Veritatis, rem? Sit accusantium 
+            harum ad, aut odio nam ab ullam totam libero, debitis eligendi.</p>
+
+        <p class="text-align">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Voluptatibus, obcaecati cupiditate accusantium ipsa totam dolorem maxime at 
+            nulla dolorum debitis natus suscipit explicabo, perspiciatis magnam. Numquam eos 
+            impedit quod earum?</p>
+
+            <p class="text-decor">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Nesciunt blanditiis magni ea optio debitis ducimus, eius praesentium quam
+                  quaerat dolor iure, tempore magnam animi deleniti eum accusamus libero 
+                  itaque tempora.</p>
+ </form>
+ <h3>Subjects:</h3>
+ <ol type="I">
+    <li>english</li>
+    <li>math</li>
+    <li>science</li>
+    <li>history</li>
+    <li>political science</li>
+ </ol>
+ <br />
+ <form>
+    <label for="username">User Name</label>
+    <input type="text" id="username" placeholder="Enter your name" required/>
+    <label for="username">User Name</label>
+    <input type="text" id="username" placeholder="Enter your name" required/>
+    <br />
+    <label for="Skills">Skills</label>
+    <input type="checkbox" id="HTML" name="Skills" value="HTML"/>
+    <label for="Skills">HTML</label>
+    <input type="checkbox" id="CSS" name="Skills" value="CSS"/>
+    <label for="Skills">CSS</label>
+    <input type="checkbox" id="C++" name="Skills" value="C++"/>
+    <label for="Skills">C++</label>
+    <br />
+    <label for="color">Pick a colour</label>
+    <input type="color" id="color"/>
+    <br />
+    <input type="submit" value="submit"/>
+ </form>
+</html>
